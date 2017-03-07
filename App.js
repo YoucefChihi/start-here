@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Router, Route, hashHistory } from 'react-router';
 
-//the routes
+//Routes
 import Home from './routes/Home.js';
 
-
-//the main styling file
+//Style
 import mainStyle from './styles/main.sass';
+
+//Theme
+import Theme from './themes/CustomTheme.js';
 
 injectTapEventPlugin();
 class App extends Component {
   render() {
     return(
-      <MuiThemeProvider>
+      <Theme>
         <Router history={hashHistory}>
           <Route path="/" component={Home}/>
         </Router>
-      </MuiThemeProvider>
+      </Theme>
     )
   }
 }
